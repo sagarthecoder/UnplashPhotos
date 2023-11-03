@@ -24,6 +24,9 @@
 		862554FC2AF5472E003F34D4 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 862554FA2AF5472E003F34D4 /* PhotoCollectionViewCell.xib */; };
 		862554FF2AF5477A003F34D4 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554FE2AF5477A003F34D4 /* NSObject+Extension.swift */; };
 		8670510B2AF549EF0090304E /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670510A2AF549EF0090304E /* CHTCollectionViewWaterfallLayout.swift */; };
+		869E706C2AF54B3E008E9362 /* UnplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E706B2AF54B3E008E9362 /* UnplashViewModel.swift */; };
+		869E706E2AF54C4B008E9362 /* GalleryConfg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E706D2AF54C4B008E9362 /* GalleryConfg.swift */; };
+		869E70732AF551B8008E9362 /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E70722AF551B8008E9362 /* CalculationManager.swift */; };
 		8BED32438D416E96F96E5DE7 /* Pods_UnplashPhotos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F758509C9EC7E643DF5B9A /* Pods_UnplashPhotos.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +53,9 @@
 		862554FA2AF5472E003F34D4 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		862554FE2AF5477A003F34D4 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		8670510A2AF549EF0090304E /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
+		869E706B2AF54B3E008E9362 /* UnplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnplashViewModel.swift; sourceTree = "<group>"; };
+		869E706D2AF54C4B008E9362 /* GalleryConfg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryConfg.swift; sourceTree = "<group>"; };
+		869E70722AF551B8008E9362 /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		862406BA2AF514D80058822C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				869E70712AF551A4008E9362 /* Managers */,
 				862554FD2AF54746003F34D4 /* Extensions */,
 				862554E62AF53B5A003F34D4 /* Services */,
 				862554E52AF53796003F34D4 /* GalleryConfig */,
@@ -138,6 +145,7 @@
 		862554E52AF53796003F34D4 /* GalleryConfig */ = {
 			isa = PBXGroup;
 			children = (
+				869E706D2AF54C4B008E9362 /* GalleryConfg.swift */,
 			);
 			path = GalleryConfig;
 			sourceTree = "<group>";
@@ -188,6 +196,7 @@
 		862554F22AF53FD5003F34D4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				869E706B2AF54B3E008E9362 /* UnplashViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,6 +234,14 @@
 				8670510A2AF549EF0090304E /* CHTCollectionViewWaterfallLayout.swift */,
 			);
 			path = CHTCollectionViewWaterfallLayout;
+			sourceTree = "<group>";
+		};
+		869E70712AF551A4008E9362 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				869E70722AF551B8008E9362 /* CalculationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		D34ACD4E72F8607D320AEEB3 /* Frameworks */ = {
@@ -365,6 +382,7 @@
 				862554FB2AF5472E003F34D4 /* PhotoCollectionViewCell.swift in Sources */,
 				862554ED2AF53D6F003F34D4 /* UnplashConfig.swift in Sources */,
 				862406AB2AF514B80058822C /* ViewController.swift in Sources */,
+				869E706E2AF54C4B008E9362 /* GalleryConfg.swift in Sources */,
 				862554FF2AF5477A003F34D4 /* NSObject+Extension.swift in Sources */,
 				862554F82AF540BE003F34D4 /* ImageURLs.swift in Sources */,
 				862554F62AF5408A003F34D4 /* UnplashImageInfo.swift in Sources */,
@@ -372,7 +390,9 @@
 				862406A72AF514B80058822C /* AppDelegate.swift in Sources */,
 				862406A92AF514B80058822C /* SceneDelegate.swift in Sources */,
 				862554EF2AF53F57003F34D4 /* UnplashNetworkManager.swift in Sources */,
+				869E70732AF551B8008E9362 /* CalculationManager.swift in Sources */,
 				8670510B2AF549EF0090304E /* CHTCollectionViewWaterfallLayout.swift in Sources */,
+				869E706C2AF54B3E008E9362 /* UnplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

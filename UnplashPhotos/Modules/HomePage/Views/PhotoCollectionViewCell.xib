@@ -15,9 +15,24 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="282" height="122"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-h4-Deh">
+                        <rect key="frame" x="0.0" y="0.0" width="282" height="122"/>
+                    </imageView>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" red="0.19439014792442322" green="0.18656119704246521" blue="0.048252895474433899" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BQo-h4-Deh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2T3-EP-fzZ"/>
+                <constraint firstItem="BQo-h4-Deh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PYk-Be-9IY"/>
+                <constraint firstAttribute="trailing" secondItem="BQo-h4-Deh" secondAttribute="trailing" id="dRH-hV-ShJ"/>
+                <constraint firstAttribute="bottom" secondItem="BQo-h4-Deh" secondAttribute="bottom" id="rmi-Ww-sdC"/>
+            </constraints>
             <size key="customSize" width="282" height="122"/>
+            <connections>
+                <outlet property="imageView" destination="BQo-h4-Deh" id="Kb6-Rn-2OK"/>
+            </connections>
             <point key="canvasLocation" x="258.01526717557249" y="45.070422535211272"/>
         </collectionViewCell>
     </objects>

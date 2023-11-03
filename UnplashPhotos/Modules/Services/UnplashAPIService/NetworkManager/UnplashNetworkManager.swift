@@ -25,6 +25,7 @@ class UnplashNetworkManager : Networkable {
             case .success(let response):
                 do {
                     let imageInfos = try JSONDecoder().decode([UnplashImageInfo].self, from: response.data)
+                    completion(imageInfos)
                 } catch let error {
                     print("Unplash API fetching Error = \(error.localizedDescription)")
                 }

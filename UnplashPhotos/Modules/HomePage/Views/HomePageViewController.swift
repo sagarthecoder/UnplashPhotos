@@ -8,20 +8,96 @@
 import UIKit
 
 class HomePageViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    var unplashViewModel : UnplashViewModel?
+    let identifier = PhotoCollectionViewCell.className
+    var items = [UnplashImageInfo]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+        showPhotos()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func setupViews() {
+        setViewModel()
+        setupCollectionView()
+        registerNibs()
     }
-    */
+    
+    private func setViewModel() {
+        unplashViewModel = UnplashViewModel()
+    }
+    
+    private func setupCollectionView(){
+        let layout = CHTCollectionViewWaterfallLayout()
+        layout.minimumColumnSpacing = 3.0
+        layout.minimumInteritemSpacing = 2.0
+        collectionView.alwaysBounceVertical = true
+        collectionView.collectionViewLayout = layout
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    private func registerNibs() {
+        let nib = UINib(nibName: PhotoCollectionViewCell.className, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: identifier)
+        collectionView.reloadData()
+    }
+    
+    private func showPhotos() {
+        unplashViewModel?.getListOfPhotos(completion: { imagesInfo in
+            DispatchQueue.main.async {
+                self.items = imagesInfo
+                self.collectionView.reloadData()
+            }
+        })
+    }
+}
 
+extension HomePageViewController : UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+    }
+}
+
+extension HomePageViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! PhotoCollectionViewCell
+        if indexPath.item < items.count {
+            let item = items[indexPath.item]
+            if let imageURLString = item.urls?.regular, let url = URL(string: imageURLString) {
+                cell.imageView.kf.setImage(with: url)
+            }
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+}
+
+extension HomePageViewController : CHTCollectionViewDelegateWaterfallLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let maxSize = CGSize(width: 400.0, height: 400.0)
+        if indexPath.item < items.count {
+            let item = items[indexPath.item]
+            if let width = item.width, let height = item.height {
+                let aspectSize = CalculationManager.aspectFit(aspectRatio: CGSize(width: CGFloat(width), height: CGFloat(height)), boundingSize: maxSize)
+                return aspectSize
+            } else {
+                return maxSize
+            }
+        } else {
+            return maxSize
+        }
+    }
+    
+    
 }
