@@ -27,6 +27,8 @@
 		869E706C2AF54B3E008E9362 /* UnplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E706B2AF54B3E008E9362 /* UnplashViewModel.swift */; };
 		869E706E2AF54C4B008E9362 /* GalleryConfg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E706D2AF54C4B008E9362 /* GalleryConfg.swift */; };
 		869E70732AF551B8008E9362 /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E70722AF551B8008E9362 /* CalculationManager.swift */; };
+		869E70772AF5567C008E9362 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E70752AF5567C008E9362 /* PhotoViewerViewController.swift */; };
+		869E70782AF5567C008E9362 /* PhotoViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869E70762AF5567C008E9362 /* PhotoViewerViewController.xib */; };
 		8BED32438D416E96F96E5DE7 /* Pods_UnplashPhotos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F758509C9EC7E643DF5B9A /* Pods_UnplashPhotos.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		869E706B2AF54B3E008E9362 /* UnplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnplashViewModel.swift; sourceTree = "<group>"; };
 		869E706D2AF54C4B008E9362 /* GalleryConfg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryConfg.swift; sourceTree = "<group>"; };
 		869E70722AF551B8008E9362 /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
+		869E70752AF5567C008E9362 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
+		869E70762AF5567C008E9362 /* PhotoViewerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		862406BA2AF514D80058822C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				869E70742AF55659008E9362 /* PhotoViewerPage */,
 				869E70712AF551A4008E9362 /* Managers */,
 				862554FD2AF54746003F34D4 /* Extensions */,
 				862554E62AF53B5A003F34D4 /* Services */,
@@ -244,6 +249,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		869E70742AF55659008E9362 /* PhotoViewerPage */ = {
+			isa = PBXGroup;
+			children = (
+				869E70752AF5567C008E9362 /* PhotoViewerViewController.swift */,
+				869E70762AF5567C008E9362 /* PhotoViewerViewController.xib */,
+			);
+			path = PhotoViewerPage;
+			sourceTree = "<group>";
+		};
 		D34ACD4E72F8607D320AEEB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +340,7 @@
 				862406B32AF514B90058822C /* LaunchScreen.storyboard in Resources */,
 				862406B02AF514B90058822C /* Assets.xcassets in Resources */,
 				862406AE2AF514B80058822C /* Main.storyboard in Resources */,
+				869E70782AF5567C008E9362 /* PhotoViewerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +398,7 @@
 				862554ED2AF53D6F003F34D4 /* UnplashConfig.swift in Sources */,
 				862406AB2AF514B80058822C /* ViewController.swift in Sources */,
 				869E706E2AF54C4B008E9362 /* GalleryConfg.swift in Sources */,
+				869E70772AF5567C008E9362 /* PhotoViewerViewController.swift in Sources */,
 				862554FF2AF5477A003F34D4 /* NSObject+Extension.swift in Sources */,
 				862554F82AF540BE003F34D4 /* ImageURLs.swift in Sources */,
 				862554F62AF5408A003F34D4 /* UnplashImageInfo.swift in Sources */,

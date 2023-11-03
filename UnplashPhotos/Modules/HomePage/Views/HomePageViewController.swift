@@ -79,6 +79,23 @@ extension HomePageViewController : UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item < items.count {
+            guard let cell = collectionView.cellForItem(at: indexPath) as? PhotoCollectionViewCell else {
+                return
+            }
+            let image = cell.imageView.image
+            gotoPhotoViewerPage(image: image)
+            
+        }
+    }
+    
+    private func gotoPhotoViewerPage(image : UIImage?) {
+        guard let image = image else {
+            return
+        }
+        let photoViewerVC = PhotoViewerViewController()
+        photoViewerVC.setImage(image)
+        self.navigationController?.pushViewController(photoViewerVC, animated: true)
         
     }
 }
