@@ -13,6 +13,13 @@
 		862406AE2AF514B80058822C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 862406AC2AF514B80058822C /* Main.storyboard */; };
 		862406B02AF514B90058822C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862406AF2AF514B90058822C /* Assets.xcassets */; };
 		862406B32AF514B90058822C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 862406B12AF514B90058822C /* LaunchScreen.storyboard */; };
+		862554E32AF53787003F34D4 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554E12AF53787003F34D4 /* HomePageViewController.swift */; };
+		862554E42AF53787003F34D4 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 862554E22AF53787003F34D4 /* HomePageViewController.xib */; };
+		862554EA2AF53BB6003F34D4 /* UnplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554E92AF53BB6003F34D4 /* UnplashAPI.swift */; };
+		862554ED2AF53D6F003F34D4 /* UnplashConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554EC2AF53D6F003F34D4 /* UnplashConfig.swift */; };
+		862554EF2AF53F57003F34D4 /* UnplashNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554EE2AF53F57003F34D4 /* UnplashNetworkManager.swift */; };
+		862554F62AF5408A003F34D4 /* UnplashImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554F52AF5408A003F34D4 /* UnplashImageInfo.swift */; };
+		862554F82AF540BE003F34D4 /* ImageURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554F72AF540BE003F34D4 /* ImageURLs.swift */; };
 		8BED32438D416E96F96E5DE7 /* Pods_UnplashPhotos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F758509C9EC7E643DF5B9A /* Pods_UnplashPhotos.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +35,13 @@
 		862406AF2AF514B90058822C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		862406B22AF514B90058822C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		862406B42AF514B90058822C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		862554E12AF53787003F34D4 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		862554E22AF53787003F34D4 /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
+		862554E92AF53BB6003F34D4 /* UnplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnplashAPI.swift; sourceTree = "<group>"; };
+		862554EC2AF53D6F003F34D4 /* UnplashConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnplashConfig.swift; sourceTree = "<group>"; };
+		862554EE2AF53F57003F34D4 /* UnplashNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnplashNetworkManager.swift; sourceTree = "<group>"; };
+		862554F52AF5408A003F34D4 /* UnplashImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnplashImageInfo.swift; sourceTree = "<group>"; };
+		862554F72AF540BE003F34D4 /* ImageURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,9 @@
 		862406BA2AF514D80058822C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				862554E62AF53B5A003F34D4 /* Services */,
+				862554E52AF53796003F34D4 /* GalleryConfig */,
+				862554E02AF53759003F34D4 /* HomePage */,
 				862406BC2AF5150C0058822C /* SceneDelegate */,
 				862406BB2AF514EA0058822C /* AppDelegate */,
 			);
@@ -98,6 +115,82 @@
 			path = SceneDelegate;
 			sourceTree = "<group>";
 		};
+		862554E02AF53759003F34D4 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				862554F42AF54015003F34D4 /* Views */,
+				862554F22AF53FD5003F34D4 /* ViewModel */,
+				862554F02AF53FB3003F34D4 /* Model */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		862554E52AF53796003F34D4 /* GalleryConfig */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GalleryConfig;
+			sourceTree = "<group>";
+		};
+		862554E62AF53B5A003F34D4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				862554EB2AF53D56003F34D4 /* UnplashConfig */,
+				862554E72AF53B66003F34D4 /* UnplashAPIService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		862554E72AF53B66003F34D4 /* UnplashAPIService */ = {
+			isa = PBXGroup;
+			children = (
+				862554E82AF53B76003F34D4 /* NetworkManager */,
+			);
+			path = UnplashAPIService;
+			sourceTree = "<group>";
+		};
+		862554E82AF53B76003F34D4 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				862554E92AF53BB6003F34D4 /* UnplashAPI.swift */,
+				862554EE2AF53F57003F34D4 /* UnplashNetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		862554EB2AF53D56003F34D4 /* UnplashConfig */ = {
+			isa = PBXGroup;
+			children = (
+				862554EC2AF53D6F003F34D4 /* UnplashConfig.swift */,
+			);
+			path = UnplashConfig;
+			sourceTree = "<group>";
+		};
+		862554F02AF53FB3003F34D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				862554F52AF5408A003F34D4 /* UnplashImageInfo.swift */,
+				862554F72AF540BE003F34D4 /* ImageURLs.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		862554F22AF53FD5003F34D4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		862554F42AF54015003F34D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				862554E12AF53787003F34D4 /* HomePageViewController.swift */,
+				862554E22AF53787003F34D4 /* HomePageViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D34ACD4E72F8607D320AEEB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,7 +205,6 @@
 				09AC69652CE89CD6975E1A4B /* Pods-UnplashPhotos.debug.xcconfig */,
 				7CA7F682E4F02E8E7FA1D0E2 /* Pods-UnplashPhotos.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -176,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862554E42AF53787003F34D4 /* HomePageViewController.xib in Resources */,
 				862406B32AF514B90058822C /* LaunchScreen.storyboard in Resources */,
 				862406B02AF514B90058822C /* Assets.xcassets in Resources */,
 				862406AE2AF514B80058822C /* Main.storyboard in Resources */,
@@ -231,9 +324,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862554E32AF53787003F34D4 /* HomePageViewController.swift in Sources */,
+				862554ED2AF53D6F003F34D4 /* UnplashConfig.swift in Sources */,
 				862406AB2AF514B80058822C /* ViewController.swift in Sources */,
+				862554F82AF540BE003F34D4 /* ImageURLs.swift in Sources */,
+				862554F62AF5408A003F34D4 /* UnplashImageInfo.swift in Sources */,
+				862554EA2AF53BB6003F34D4 /* UnplashAPI.swift in Sources */,
 				862406A72AF514B80058822C /* AppDelegate.swift in Sources */,
 				862406A92AF514B80058822C /* SceneDelegate.swift in Sources */,
+				862554EF2AF53F57003F34D4 /* UnplashNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +485,6 @@
 				INFOPLIST_FILE = UnplashPhotos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -415,7 +513,6 @@
 				INFOPLIST_FILE = UnplashPhotos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

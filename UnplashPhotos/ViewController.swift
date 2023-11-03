@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  UnplashPhotos
 //
-//  Created by Mubin Khan on 11/3/23.
+//  Created by Sagar on 11/3/23.
 //
 
 import UIKit
