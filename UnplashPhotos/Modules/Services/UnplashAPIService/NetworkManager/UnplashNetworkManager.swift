@@ -13,6 +13,27 @@ protocol Networkable : AnyObject {
     func getListOfPhotos(maxPhotos : Int, completion : @escaping (([UnplashImageInfo])->Void))
 }
 
-class UnplashNetworkManager {
-
+class UnplashNetworkManager : Networkable {
+    private init() {}
+    
+    static let shared = UnplashNetworkManager()
+    var provider = MoyaProvider<UnplashAPI>()
+    
+    func getListOfPhotos(maxPhotos: Int, completion: @escaping (([UnplashImageInfo]) ->())) {
+        provider.request(.getListOfPhotos(maxPhotos: maxPhotos)) { result in
+            switch result {
+            case .success(let response):
+                do {
+                    let imageInfos = try JSONDecoder().decode([UnplashImageInfo].self, from: response.data)
+                } catch let error {
+                    print("Unplash API fetching Error = \(error.localizedDescription)")
+                }
+                break
+            case .failure(let error):
+                print("Unplash API fetching Error = \(error.localizedDescription)")
+                break
+            }
+        }
+    }
+    
 }
