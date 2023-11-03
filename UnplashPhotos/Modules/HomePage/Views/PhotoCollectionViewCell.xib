@@ -22,7 +22,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" red="0.19439014792442322" green="0.18656119704246521" blue="0.048252895474433899" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="BQo-h4-Deh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2T3-EP-fzZ"/>
                 <constraint firstItem="BQo-h4-Deh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PYk-Be-9IY"/>

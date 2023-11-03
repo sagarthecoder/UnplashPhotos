@@ -16,7 +16,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "getListOfPhotos(maxPhotos:completion:)"
+            landmarkName = "getListOfPhotos(maxPhotos:pageNo:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -49,7 +49,38 @@
                   endingLineNumber = "34"
                   offsetFromSymbolStart = "544">
                </Location>
+               <Location
+                  uuid = "DDD60E8C-49CB-4618-A839-B029EF22232C - 2e1d0cbeb21f0241"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in UnplashPhotos.UnplashNetworkManager.getListOfPhotos(maxPhotos: Swift.Int, pageNo: Swift.Int, completion: (Swift.Array&lt;UnplashPhotos.UnplashImageInfo&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "UnplashPhotos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mubinkhan/Desktop/Sagar/UnplashPhotos/UnplashPhotos/Modules/Services/UnplashAPIService/NetworkManager/UnplashNetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "544">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "579EF20C-B925-48AF-93D8-750701B5B05F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnplashPhotos/Modules/HomePage/Views/HomePageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

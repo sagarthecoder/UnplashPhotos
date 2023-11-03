@@ -11,9 +11,8 @@ class UnplashViewModel {
     
     init() {}
     
-    func getListOfPhotos(completion : @escaping (_ imagesInfo : [UnplashImageInfo])->()) {
-        let maxItems = GalleryConfg.maxItemsForPerPage()
-        UnplashNetworkManager.shared.getListOfPhotos(maxPhotos: maxItems) { imagesInfo in
+    func getListOfPhotos(pageNo : Int, maxPhotos : Int, completion : @escaping (_ imagesInfo : [UnplashImageInfo])->()) {
+        UnplashNetworkManager.shared.getListOfPhotos(maxPhotos: maxPhotos, pageNo: pageNo) { imagesInfo in
             completion(imagesInfo)
         }
     }

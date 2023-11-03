@@ -14,10 +14,11 @@ class HomePageViewController: UIViewController {
     var unplashViewModel : UnplashViewModel?
     let identifier = PhotoCollectionViewCell.className
     var items = [UnplashImageInfo]()
+    var pageNo = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        showPhotos()
+        updatePhotosFromAPi()
     }
     
     private func setupViews() {
@@ -36,8 +37,10 @@ class HomePageViewController: UIViewController {
         layout.minimumInteritemSpacing = 2.0
         collectionView.alwaysBounceVertical = true
         collectionView.collectionViewLayout = layout
+        collectionView.isPrefetchingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.prefetchDataSource = self
     }
     
     private func registerNibs() {
@@ -46,10 +49,11 @@ class HomePageViewController: UIViewController {
         collectionView.reloadData()
     }
     
-    private func showPhotos() {
-        unplashViewModel?.getListOfPhotos(completion: { imagesInfo in
+    private func updatePhotosFromAPi() {
+        let maxPhotos = GalleryConfg.maxItemsForPerPage()
+        unplashViewModel?.getListOfPhotos(pageNo: pageNo, maxPhotos: maxPhotos, completion: { imagesInfo in
             DispatchQueue.main.async {
-                self.items = imagesInfo
+                self.items += imagesInfo
                 self.collectionView.reloadData()
             }
         })
@@ -71,7 +75,7 @@ extension HomePageViewController : UICollectionViewDelegate {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! PhotoCollectionViewCell
         if indexPath.item < items.count {
             let item = items[indexPath.item]
-            if let imageURLString = item.urls?.regular, let url = URL(string: imageURLString) {
+            if let imageURLString = item.urls?.small, let url = URL(string: imageURLString) {
                 cell.imageView.kf.setImage(with: url)
             }
         }
@@ -113,6 +117,20 @@ extension HomePageViewController : CHTCollectionViewDelegateWaterfallLayout {
             }
         } else {
             return maxSize
+        }
+    }
+    
+}
+
+extension HomePageViewController : UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        let lastIndex = items.count - 1
+        if lastIndex >= 0  {
+            let lastIndexPath = IndexPath(item: lastIndex, section: 0)
+            if indexPaths.contains(lastIndexPath) {
+                pageNo += 1
+                updatePhotosFromAPi()
+            }
         }
     }
     

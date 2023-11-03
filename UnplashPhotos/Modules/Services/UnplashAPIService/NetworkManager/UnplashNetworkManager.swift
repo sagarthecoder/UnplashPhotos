@@ -10,7 +10,7 @@ import Moya
 
 protocol Networkable : AnyObject {
     var provider : MoyaProvider<UnplashAPI> { get }
-    func getListOfPhotos(maxPhotos : Int, completion : @escaping (([UnplashImageInfo])->Void))
+    func getListOfPhotos(maxPhotos : Int, pageNo : Int, completion : @escaping (([UnplashImageInfo])->Void))
 }
 
 class UnplashNetworkManager : Networkable {
@@ -19,8 +19,8 @@ class UnplashNetworkManager : Networkable {
     static let shared = UnplashNetworkManager()
     var provider = MoyaProvider<UnplashAPI>()
     
-    func getListOfPhotos(maxPhotos: Int, completion: @escaping (([UnplashImageInfo]) ->())) {
-        provider.request(.getListOfPhotos(maxPhotos: maxPhotos)) { result in
+    func getListOfPhotos(maxPhotos: Int, pageNo : Int, completion: @escaping (([UnplashImageInfo]) ->())) {
+        provider.request(.getListOfPhotos(maxPhotos: maxPhotos, pageNo: pageNo)) { result in
             switch result {
             case .success(let response):
                 do {
