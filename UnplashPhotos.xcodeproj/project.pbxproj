@@ -20,6 +20,10 @@
 		862554EF2AF53F57003F34D4 /* UnplashNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554EE2AF53F57003F34D4 /* UnplashNetworkManager.swift */; };
 		862554F62AF5408A003F34D4 /* UnplashImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554F52AF5408A003F34D4 /* UnplashImageInfo.swift */; };
 		862554F82AF540BE003F34D4 /* ImageURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554F72AF540BE003F34D4 /* ImageURLs.swift */; };
+		862554FB2AF5472E003F34D4 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554F92AF5472E003F34D4 /* PhotoCollectionViewCell.swift */; };
+		862554FC2AF5472E003F34D4 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 862554FA2AF5472E003F34D4 /* PhotoCollectionViewCell.xib */; };
+		862554FF2AF5477A003F34D4 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862554FE2AF5477A003F34D4 /* NSObject+Extension.swift */; };
+		8670510B2AF549EF0090304E /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670510A2AF549EF0090304E /* CHTCollectionViewWaterfallLayout.swift */; };
 		8BED32438D416E96F96E5DE7 /* Pods_UnplashPhotos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F758509C9EC7E643DF5B9A /* Pods_UnplashPhotos.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +46,10 @@
 		862554EE2AF53F57003F34D4 /* UnplashNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnplashNetworkManager.swift; sourceTree = "<group>"; };
 		862554F52AF5408A003F34D4 /* UnplashImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnplashImageInfo.swift; sourceTree = "<group>"; };
 		862554F72AF540BE003F34D4 /* ImageURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLs.swift; sourceTree = "<group>"; };
+		862554F92AF5472E003F34D4 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		862554FA2AF5472E003F34D4 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		862554FE2AF5477A003F34D4 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		8670510A2AF549EF0090304E /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 		862406A52AF514B80058822C /* UnplashPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				867051082AF549AD0090304E /* Library */,
 				862406BA2AF514D80058822C /* Modules */,
 				862406AA2AF514B80058822C /* ViewController.swift */,
 				862406AC2AF514B80058822C /* Main.storyboard */,
@@ -90,6 +99,7 @@
 		862406BA2AF514D80058822C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				862554FD2AF54746003F34D4 /* Extensions */,
 				862554E62AF53B5A003F34D4 /* Services */,
 				862554E52AF53796003F34D4 /* GalleryConfig */,
 				862554E02AF53759003F34D4 /* HomePage */,
@@ -187,8 +197,34 @@
 			children = (
 				862554E12AF53787003F34D4 /* HomePageViewController.swift */,
 				862554E22AF53787003F34D4 /* HomePageViewController.xib */,
+				862554F92AF5472E003F34D4 /* PhotoCollectionViewCell.swift */,
+				862554FA2AF5472E003F34D4 /* PhotoCollectionViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		862554FD2AF54746003F34D4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				862554FE2AF5477A003F34D4 /* NSObject+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		867051082AF549AD0090304E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				867051092AF549BC0090304E /* CHTCollectionViewWaterfallLayout */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		867051092AF549BC0090304E /* CHTCollectionViewWaterfallLayout */ = {
+			isa = PBXGroup;
+			children = (
+				8670510A2AF549EF0090304E /* CHTCollectionViewWaterfallLayout.swift */,
+			);
+			path = CHTCollectionViewWaterfallLayout;
 			sourceTree = "<group>";
 		};
 		D34ACD4E72F8607D320AEEB3 /* Frameworks */ = {
@@ -269,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				862554E42AF53787003F34D4 /* HomePageViewController.xib in Resources */,
+				862554FC2AF5472E003F34D4 /* PhotoCollectionViewCell.xib in Resources */,
 				862406B32AF514B90058822C /* LaunchScreen.storyboard in Resources */,
 				862406B02AF514B90058822C /* Assets.xcassets in Resources */,
 				862406AE2AF514B80058822C /* Main.storyboard in Resources */,
@@ -325,14 +362,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				862554E32AF53787003F34D4 /* HomePageViewController.swift in Sources */,
+				862554FB2AF5472E003F34D4 /* PhotoCollectionViewCell.swift in Sources */,
 				862554ED2AF53D6F003F34D4 /* UnplashConfig.swift in Sources */,
 				862406AB2AF514B80058822C /* ViewController.swift in Sources */,
+				862554FF2AF5477A003F34D4 /* NSObject+Extension.swift in Sources */,
 				862554F82AF540BE003F34D4 /* ImageURLs.swift in Sources */,
 				862554F62AF5408A003F34D4 /* UnplashImageInfo.swift in Sources */,
 				862554EA2AF53BB6003F34D4 /* UnplashAPI.swift in Sources */,
 				862406A72AF514B80058822C /* AppDelegate.swift in Sources */,
 				862406A92AF514B80058822C /* SceneDelegate.swift in Sources */,
 				862554EF2AF53F57003F34D4 /* UnplashNetworkManager.swift in Sources */,
+				8670510B2AF549EF0090304E /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
